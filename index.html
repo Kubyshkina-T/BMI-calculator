@@ -4,48 +4,78 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>my-vite-project</title>
+    <title>BodyMassIndex</title>
   </head>
   <body>
     <section class="hero">
       <div class="description-container">
-        <h1 class="title">BMI (Body Mass Index)</h1>
+      <h1 class="title">BMI (Body Mass Index)</h1>
         <div class="text-table">
           <p class="paragraph">
-            Body Mass Index (BMI) is an indicator that helps assess whether a
-            person’s weight corresponds to their height. It is used to determine
-            underweight, normal weight, or excess body weight in adults.
+           Body Mass Index (BMI) is a simple indicator that helps determine whether a person’s weight is appropriate for their height. It is often used as a first step in assessing overall body condition and potential health risks. 
           </p>
-          <div class="table-container">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>BMI</th>
-                  <th>Категория</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="red-row">
-                  <td>Меньше 18.5</td>
-                  <td>Недостаток веса</td>
-                </tr>
-                <tr class="green-row">
-                  <td>18.5 - 24.9</td>
-                  <td>Норма</td>
-                </tr>
-                <tr class="orange-row">
-                  <td>30 и больше</td>
-                  <td>Ожирение</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <p class="paragraph">Calculating BMI takes only a few seconds, but it can indicate whether a person is underweight, within a normal range, or overweight.</p>
+          <p class="paragraph">An interesting fact is that BMI was developed in the 19th century and is still widely used today. However, it does not take muscle mass or fat distribution into account, so it is not a perfect measure. BMI is best viewed as a starting point and should be considered alongside lifestyle, physical activity, and overall well-being.</p>
         </div>
+        <div class="table-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>BMI</th>
+                <th>Category</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="red-row">
+                <td>&lt 18.5</td>
+                <td>Underweight</td>
+              </tr>
+              <tr class="green-row">
+                <td>18.5 - 24.9</td>
+                <td>Norm</td>
+              </tr>
+              <tr class="orange-row">
+                <td>30 &gt</td>
+                <td>Obesity</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+   </div>
         <div class="img-cont">
           <img src="./src/img/image.jpg" />
         </div>
       </div>
     </section>
+    <section class="calculator">
+      <form class="form-calculator">
+        <div class="form-field">
+          <label for="height" class="form-label">Height</label>
+          <div class="form-wrapper">
+            <input type="tel" class="form-input" id="user-height" name="user-height" placeholder="Enter your height in sm">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="weight" class="form-label">Weight</label>
+          <div class="form-wrapper">
+            <input type="tel" class="form-input" id="user-weight" name="user-weight" placeholder="Enter your weight in kg">
+          </div>
+        </div>
+        <button class="btn-calculator" type="submit">Calculation</button>
+      </form>
+    </section>
+    <!-- modal -->
+    <div class="modal-overlay hidden">
+  <div class="modal">
+    <button class="modal-close">×</button>
+
+    <h3 class="modal-title">Your result</h3>
+    <p class="modal-bmi"></p>
+    <p class="modal-text"></p>
+  </div>
+</div>
+
     <script type="module" src="/src/main.js"></script>
     <script type="module" src="./src/js/1-page.js"></script>
   </body>

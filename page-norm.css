@@ -1,0 +1,24 @@
+
+/* html {
+ background-image: linear-gradient(rgb(252, 238, 222), rgba(216, 217, 240, 0.7)),
+     url(../src/img/background.png);
+background-position: center;
+background-size: cover;
+    } */
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body.page-norm {
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(rgb(252, 238, 222), rgba(216, 217, 240, 0.7)),
+        url("/src/img/background.png");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
