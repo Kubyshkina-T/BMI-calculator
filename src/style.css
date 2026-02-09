@@ -160,7 +160,7 @@ background-color: rgba(9, 143, 20, 0.781);
   }
   
   .img-cont img {
-    width: 240px;
+    width: 360px;
     border-radius: 8px;
     display: block;
     -webkit-mask-image: radial-gradient(ellipse at center, #000 65%, transparent 100%);
@@ -198,11 +198,12 @@ img{
   align-items: center;
   gap:80px;
   margin-bottom: 80px;
-  justify-content: space-around;
+  justify-content: center;
 }
 .title{
 margin: 0 0 40px;
 color:#614e4e;
+font-size: 52px;
 }
 
 
