@@ -5,11 +5,11 @@
 background-position: center;
 background-size: cover;
     } */
-html,
+/* html,
 body {
     height: 100%;
     margin: 0;
-}
+} */
 
 body.page-norm {
     min-height: 100vh;
@@ -24,18 +24,33 @@ body.page-norm {
 }
 .hero-bmi-norm{
     display: flex;
+    justify-content: center;
     gap: 56px;
     padding: 0 20px;
-
-
+    justify-content: center;
 }
 .paragraph-container{
     display: flex;
     flex-direction: column;
+    max-width: 460px;
 }
 img{
 max-width: 100%;
 height: auto;
 display: block;
 object-fit: contain;
+
+}
+.content {
+    display: flex;
+    gap: 40px;
+}
+
+.text {
+  flex: 1;
+}
+
+.wrapper {
+  flex: 1;
+  position: relative;
 }
