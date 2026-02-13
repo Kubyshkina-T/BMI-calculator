@@ -39,7 +39,7 @@ h2{
 
 html{
   background-image: linear-gradient(rgb(252, 238, 222), rgba(216, 217, 240, 0.7)),
-      url(./src/img/background.png);
+      url(../src/img/background.png);
   background-position: center;
   background-size:cover;
     }
