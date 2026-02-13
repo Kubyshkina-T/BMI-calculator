@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/BMI-calculator/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BodyMassIndex</title>
+    <script type="module" crossorigin src="/BMI-calculator/assets/index-bgahrLH7.js"></script>
+    <link rel="stylesheet" crossorigin href="/BMI-calculator/assets/index-PWKiofId.css">
+  </head>
+  <body>
+    <section class="hero">
+      <div class="container">
+        <div class="description-container">
+          <h1 class="title">Body Mass Index(BMI)</h1>
+          <div class="conteiner-hero">
+          <div class="text-table">
+            <p class="paragraph">
+              <span class="accent">Body Mass Index (BMI)</span> is a simple
+              indicator that helps determine whether a person’s weight is
+              appropriate for their height. It is often used as a first step in
+              assessing overall body condition and potential health risks.
+            </p>
+            <p class="paragraph">
+              Calculating BMI takes only a few seconds, but it can indicate
+              whether a person is underweight, within a normal range, or
+              overweight.
+            </p>
+            <p class="paragraph">
+              <span class="accent">An interesting fact</span> is that BMI was
+              developed in the 19th century and is still widely used today.
+              However, it does not take muscle mass or fat distribution into
+              account, so it is not a perfect measure. BMI is best viewed as a
+              starting point and should be considered alongside lifestyle,
+              physical activity, and overall well-being.
+            </p>
+            </div>
+            <div class="wrapper">
+          <img
+            src="/BMI-calculator/assets/image-5Tzd_LBV.jpg"
+            class="hero-img"
+            alt="body mass index"
+          />
+          <span class="decor decor-dots">+++</span>
+          <span class="decor decor-lines">///</span>
+        </div>
+          </div>
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>BMI</th>
+                  <th>Category</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="red-row"
+                  onclick="window.location.href = './page-under.html'"
+                >
+                  <td>&lt 18.5</td>
+                  <td>Underweight</td>
+                </tr>
+                <tr
+                  class="green-row"
+                  onclick="window.location.href = './page-norm.html'"
+                >
+                  <td>18.5 - 24.9</td>
+                  <td>Norm</td>
+                </tr>
+                <tr
+                  class="orange-row"
+                  onclick="window.location.href = './page-over.html'"
+                >
+                  <td>30 &gt</td>
+                  <td>Obesity</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <section class="calculator">
+      <div class="container">
+      <h2 class="sub-title">Calculate your BMI</h2>
+      <div class="calculate-row">
+        <form class="form-calculator">
+          <div class="form-field">
+            <label for="height" class="form-label">Height</label>
+            <div class="form-wrapper">
+              <input
+                type="tel"
+                class="form-input"
+                id="user-height"
+                name="user-height"
+                min="100"
+                max="280"
+                placeholder="Enter your height in сm"
+              />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="weight" class="form-label">Weight</label>
+            <div class="form-wrapper">
+              <input
+                type="tel"
+                class="form-input"
+                id="user-weight"
+                name="user-weight"
+                min="10"
+                max="200"
+                placeholder="Enter your weight in kg"
+              />
+            </div>
+          </div>
+          <button class="btn-calculator" type="submit">Calculation</button>
+        </form>
+        <div class="motivation-container">
+          <p class="motivation-text">Ready to check your result?</p>
+          <img src="/BMI-calculator/assets/time-iQbxi954.png" alt="time" class="time-img" />
+        </div>
+      </div>
+      </div>
+    </section>
+    <!-- modal -->
+    <div class="modal-overlay hidden">
+      <div class="modal">
+        <button class="modal-close">×</button>
+
+        <h3 class="modal-title">Your result</h3>
+        <p class="modal-bmi"></p>
+        <p class="modal-text"></p>
+      </div>
+    </div>
+    <div class="video-conteiner">
+      <div class="container">
+      <h2 class="video-title">Did you know this?</h2>
+      <video
+        src="/BMI-calculator/assets/video-DI4XcCjT.mp4"
+        class="promo-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        controls
+      ></video>
+    </div>
+    </div>
+    <!-- <script type="module" src="./src/main.js"></script> -->
+  </body>
+</html>
