@@ -1,8 +1,6 @@
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
-alert("JS loaded");
-
 const inputHeight = document.querySelector("#user-height");
 const inputWeight = document.querySelector("#user-weight");
 const btn = document.querySelector(".btn-calculator");
