@@ -8,6 +8,20 @@
     <title>BodyMassIndex</title>
   </head>
   <body>
+    <header>
+      <nav class="nav">
+        <div class="container header-container">
+          <a href="./index.html" class="logo">BMI <span>Calculator</span></a>
+          <ul class="nav-list">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./page-under.html">Underweight</a></li>
+            <li><a href="./page-norm.html">Norm</a></li>
+            <li><a href="./page-over.html">Overweight</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
     <section class="hero">
       <div class="container">
         <div class="description-container">
@@ -124,16 +138,7 @@
       </div>
       </div>
     </section>
-    <!-- modal -->
-    <div class="modal-overlay hidden">
-      <div class="modal">
-        <button class="modal-close">×</button>
-
-        <h3 class="modal-title">Your result</h3>
-        <p class="modal-bmi"></p>
-        <p class="modal-text"></p>
-      </div>
-    </div>
+    </main>
     <div class="video-conteiner">
       <div class="container">
       <h2 class="video-title">Did you know this?</h2>
@@ -148,7 +153,22 @@
       ></video>
     </div>
     </div>
-    <!-- <script type="module" src="./src/main.js"></script> -->
-    <script type="module" src="./src/js/1-page.js"></script>
+
+     <footer class="footer">
+      <div class="container">
+        <p class="footer-text">© 2026 Body Mass Index Calculator</p>
+      </div>
+    </footer>
+    <!-- modal -->
+    <div class="modal-overlay hidden">
+      <div class="modal">
+        <button class="modal-close">×</button>
+
+        <h3 class="modal-title">Your result</h3>
+        <p class="modal-bmi"></p>
+        <p class="modal-text"></p>
+      </div>
+    </div>
+    <script type="module" src="./src/js/home.js"></script>
   </body>
 </html>
