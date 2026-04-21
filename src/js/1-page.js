@@ -3,31 +3,27 @@ import "izitoast/dist/css/iziToast.min.css";
 
 const inputHeight = document.querySelector("#user-height");
 const inputWeight = document.querySelector("#user-weight");
-const btn = document.querySelector(".btn-calculator");
 const form = document.querySelector(".form-calculator");
 
 const modal = document.querySelector(".modal-overlay");
-const btnCloseModal = document.querySelector(".modal-close");
-const modalBMI = document.querySelector(".modal-bmi")
+const modalBMI = document.querySelector(".modal-bmi");
 const modalText = document.querySelector(".modal-text");
 const modalClose = document.querySelector(".modal-close");
 
-const input = document.querySelector(".form-input");
-
 form.addEventListener("submit", onSubmit);
-
+modalClose.addEventListener("click", toggleModal);
 
 function onSubmit(event) {
-  event.preventDefault();
+    event.preventDefault();
+    console.log("submit works");
 
   const weight = Number(inputWeight.value);
   const heightCM = Number(inputHeight.value);
 
-
   if (!validator(weight, heightCM)) return;
 
   const heightM = heightCM / 100;
-  const bmi = Number(caltulateBMI(weight, heightM));
+  const bmi = calculateBMI(weight, heightM);
 
   modalBMI.textContent = `BMI: ${bmi.toFixed(1)}`;
 
@@ -42,12 +38,17 @@ function onSubmit(event) {
       <a href="page-norm.html" class="modal-link">More information</a>
     `;
   } else if (bmi < 30) {
-    resultText = `Your BMI indicates overweight. 
+    resultText = `
+      Your BMI indicates overweight.
       <br>
-      <a href="page-over.html" class="modal-link">More information</a>`;
+      <a href="page-over.html" class="modal-link">More information</a>
+    `;
   } else {
-    resultText = `Your BMI indicates obesity. Professional advice is recommended.
-    <a href="page-over.html" class="modal-link">More information</a>`;
+    resultText = `
+      Your BMI indicates obesity. Professional advice is recommended.
+      <br>
+      <a href="page-over.html" class="modal-link">More information</a>
+    `;
   }
 
   modalText.innerHTML = resultText;
@@ -55,55 +56,56 @@ function onSubmit(event) {
   form.reset();
 }
 
-function caltulateBMI(kg, m) {
-    const summ = kg / (m * m)
-    return summ.toFixed(1);
+function calculateBMI(kg, m) {
+  return kg / (m * m);
 }
 
-
-modalClose.addEventListener("click", toggleModal);
 function toggleModal() {
-    modal.style.display = "none";
+  modal.classList.add("hidden");
 }
-
 
 function validator(weight, height) {
-    if (!weight) {
-        iziToast.error({
-            message: "Please enter your weight",
-        });
-        return false;
-    }
-        if (weight < 30) {
-            iziToast.error({
-                message: "Weight must be at least 30 kg",
-            });
-            return false;
-    }
-    if (weight > 250) {
-         iziToast.error({
-                message: "Weight must be no more than 250 kg",
-         });
-        return false;
-    }
-    if (!height) {
-        iziToast.error({
-            message: "Please enter your heigth",
-        }); 
-        return false;
-    }
-    if (height < 100) {
-         iziToast.error({
-            message: "Height must be at least 100 cm",
-         }); 
-        return false;
-        }
-        if (height > 250) {
-           iziToast.error({
-            message: "Height must be no more than 250 cm",
-           });   
-            return false;
-        
-    }
-   return true;;
+  if (!weight || Number.isNaN(weight)) {
+    iziToast.error({
+      message: "Please enter your weight",
+    });
+    return false;
+  }
+
+  if (weight < 30) {
+    iziToast.error({
+      message: "Weight must be at least 30 kg",
+    });
+    return false;
+  }
+
+  if (weight > 250) {
+    iziToast.error({
+      message: "Weight must be no more than 250 kg",
+    });
+    return false;
+  }
+
+  if (!height || Number.isNaN(height)) {
+    iziToast.error({
+      message: "Please enter your height",
+    });
+    return false;
+  }
+
+  if (height < 100) {
+    iziToast.error({
+      message: "Height must be at least 100 cm",
+    });
+    return false;
+  }
+
+  if (height > 250) {
+    iziToast.error({
+      message: "Height must be no more than 250 cm",
+    });
+    return false;
+  }
+
+  return true;
 }
