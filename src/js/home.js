@@ -1,4 +1,4 @@
-import './style.css';
+import '../style.css';
 import '../../page-norm.css';
 import '../../page-over.css';
 import '../../page-under.css';
