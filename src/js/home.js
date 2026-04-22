@@ -1,3 +1,8 @@
+import './style.css';
+import '../../page-norm.css';
+import '../../page-over.css';
+import '../../page-under.css';
+
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
