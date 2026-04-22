@@ -3,6 +3,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   base: "/BMI-calculator/",
   build: {
+    sourcemap: true, 
     rollupOptions: {
       input: {
         main: "index.html",
