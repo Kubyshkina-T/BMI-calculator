@@ -2,57 +2,64 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BodyMassIndex</title>
-    <link rel="stylesheet" href="./page-over.css" />
+    <title>Overweight BMI</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./page-over.css" />
   </head>
-  <body>
-    <section class="hero-bmi-over">
-      <div class="container">
-        <h1 class="title">Overweight</h1>
-        <div class="content">
-          <div class="text paragraph-container-over">
-            <p class="paragraph">
-              A Body Mass Index (BMI) of 25 or higher indicates overweight. This
-              means that body weight exceeds the recommended range for a given
-              height and may place additional strain on the body.
-            </p>
-            <p class="paragraph">
-              With an elevated BMI, the load on the joints, cardiovascular
-              system, and metabolism increases. Over time, this may raise the
-              risk of chronic fatigue and metabolic disorders. However, BMI
-              alone does not reflect fat distribution or muscle mass and does
-              not always provide a complete picture of physical fitness.
-            </p>
-            <p class="paragraph">
-              It is important to remember that overweight is not only a matter
-              of appearance, but primarily a matter of health and quality of
-              life. Weight management should be gradual and safe, without
-              extreme dieting or severe restrictions.
-            </p>
+  <body class="page-over">
+    <main>
+      <section class="over-page">
+        <div class="container">
+          <h1 class="over-page__title">Overweight</h1>
 
-            <p class="paragraph">
-              If your BMI is above the normal range, it is recommended to focus
-              on sustainable lifestyle changes: balanced nutrition, regular
-              physical activity, and the development of healthy habits. Gradual
-              weight reduction can improve overall well-being and reduce strain
-              on the body.
-            </p>
+          <div class="over-page__content">
+            <div class="over-page__text">
+              <p class="over-page__paragraph">
+                A Body Mass Index (BMI) of 25 or higher indicates overweight.
+                This means that body weight exceeds the recommended range for a
+                given height and may place additional strain on the body.
+              </p>
+
+              <p class="over-page__paragraph">
+                With an elevated BMI, the load on the joints, cardiovascular
+                system, and metabolism increases. Over time, this may raise the
+                risk of chronic fatigue and metabolic disorders. However, BMI
+                alone does not reflect fat distribution or muscle mass and does
+                not always provide a complete picture of physical fitness.
+              </p>
+
+              <p class="over-page__paragraph">
+                It is important to remember that overweight is not only a matter
+                of appearance, but primarily a matter of health and quality of
+                life. Weight management should be gradual and safe, without
+                extreme dieting or severe restrictions.
+              </p>
+
+              <p class="over-page__paragraph">
+                If your BMI is above the normal range, it is recommended to
+                focus on sustainable lifestyle changes: balanced nutrition,
+                regular physical activity, and the development of healthy
+                habits. Gradual weight reduction can improve overall well-being
+                and reduce strain on the body.
+              </p>
+            </div>
+
+            <div class="over-page__media">
+              <img
+                src="/img/bmi-over.jpg"
+                alt="Overweight body mass index"
+                class="over-page__image"
+              />
+              <span class="over-page__decor over-page__decor--dots">+++</span>
+              <span class="over-page__decor over-page__decor--lines">///</span>
+            </div>
           </div>
-          <div class="wrapper wrapper-over">
-            <img
-              src="./public/img/bmi-over.jpg"
-              alt="body mass index"
-              class="hero-img"
-            />
-            <span class="decor decor-dots">+++</span>
-            <span class="decor decor-lines">///</span>
-          </div>
+
+          <a href="./index.html" class="back-button">← Back to Home</a>
         </div>
-        <a href="./index.html" class="back-btn">← Back to Home</a>
-      </div>
-    </section>
+      </section>
+    </main>
   </body>
 </html>

@@ -1,23 +1,33 @@
-import '../style.css';
+import "../style.css";
 
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
 const inputHeight = document.querySelector("#user-height");
 const inputWeight = document.querySelector("#user-weight");
-const form = document.querySelector(".form-calculator");
+const form = document.querySelector(".calculator-form");
 
 const modal = document.querySelector(".modal-overlay");
 const modalBMI = document.querySelector(".modal-bmi");
 const modalText = document.querySelector(".modal-text");
 const modalClose = document.querySelector(".modal-close");
 
-form.addEventListener("submit", onSubmit);
-modalClose.addEventListener("click", toggleModal);
+if (form) {
+  form.addEventListener("submit", onSubmit);
+}
+
+if (modalClose) {
+  modalClose.addEventListener("click", toggleModal);
+}
+
+if (modal) {
+  modal.addEventListener("click", onOverlayClick);
+}
+
+document.addEventListener("keydown", onEscPress);
 
 function onSubmit(event) {
-    event.preventDefault();
-    console.log("submit works");
+  event.preventDefault();
 
   const weight = Number(inputWeight.value);
   const heightCM = Number(inputHeight.value);
@@ -30,40 +40,51 @@ function onSubmit(event) {
   modalBMI.textContent = `BMI: ${bmi.toFixed(1)}`;
 
   let resultText = "";
+  let link = "";
 
   if (bmi < 18.5) {
     resultText = "Your BMI indicates underweight.";
-  } else if (bmi < 24.9) {
-    resultText = `
-      Your BMI indicates normal weight.
-      <br>
-      <a href="page-norm.html" class="modal-link">More information</a>
-    `;
+    link = "./page-under.html";
+  } else if (bmi < 25) {
+    resultText = "Your BMI indicates normal weight.";
+    link = "./page-norm.html";
   } else if (bmi < 30) {
-    resultText = `
-      Your BMI indicates overweight.
-      <br>
-      <a href="page-over.html" class="modal-link">More information</a>
-    `;
+    resultText = "Your BMI indicates overweight.";
+    link = "./page-over.html";
   } else {
-    resultText = `
-      Your BMI indicates obesity. Professional advice is recommended.
-      <br>
-      <a href="page-over.html" class="modal-link">More information</a>
-    `;
+    resultText =
+      "Your BMI indicates obesity. Professional advice is recommended.";
+    link = "./page-over.html";
   }
 
-  modalText.innerHTML = resultText;
+  modalText.innerHTML = `
+    ${resultText}
+    <br>
+    <a href="${link}" class="modal-link">More information</a>
+  `;
+
   modal.classList.remove("hidden");
   form.reset();
 }
 
-function calculateBMI(kg, m) {
-  return kg / (m * m);
+function calculateBMI(weightKg, heightM) {
+  return weightKg / (heightM * heightM);
 }
 
 function toggleModal() {
   modal.classList.add("hidden");
+}
+
+function onOverlayClick(event) {
+  if (event.target === modal) {
+    toggleModal();
+  }
+}
+
+function onEscPress(event) {
+  if (event.key === "Escape" && !modal.classList.contains("hidden")) {
+    toggleModal();
+  }
 }
 
 function validator(weight, height) {

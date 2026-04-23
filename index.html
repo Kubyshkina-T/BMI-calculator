@@ -2,17 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="stylesheet" href="./src/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BodyMassIndex</title>
+    <title>Body Mass Index Calculator</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   </head>
   <body>
-    <header>
-      <nav class="nav">
-        <div class="container header-container">
-          <a href="./index.html" class="logo">BMI <span>Calculator</span></a>
-          <ul class="nav-list">
+    <header class="site-header">
+      <nav class="site-nav">
+        <div class="container site-header__inner">
+          <a href="./index.html" class="site-logo"
+            >BMI <span>Calculator</span></a
+          >
+
+          <ul class="site-nav__list">
             <li><a href="./index.html">Home</a></li>
             <li><a href="./page-under.html">Underweight</a></li>
             <li><a href="./page-norm.html">Norm</a></li>
@@ -21,48 +23,52 @@
         </div>
       </nav>
     </header>
+
     <main>
-      <section class="hero">
+      <section class="hero-section">
         <div class="container">
-          <div class="description-container">
-            <h1 class="title">Body Mass Index(BMI)</h1>
-            <div class="container-hero">
-              <div class="text-description">
-                <p class="paragraph">
-                  <span class="accent">Body Mass Index (BMI)</span> is a simple
-                  indicator that helps determine whether a person’s weight is
-                  appropriate for their height. It is often used as a first step
-                  in assessing overall body condition and potential health
-                  risks.
-                </p>
-                <p class="paragraph">
-                  Calculating BMI takes only a few seconds, but it can indicate
-                  whether a person is underweight, within a normal range, or
-                  overweight.
-                </p>
-                <p class="paragraph">
-                  <span class="accent">An interesting fact</span> is that BMI
-                  was developed in the 19th century and is still widely used
-                  today. However, it does not take muscle mass or fat
-                  distribution into account, so it is not a perfect measure. BMI
-                  is best viewed as a starting point and should be considered
-                  alongside lifestyle, physical activity, and overall
-                  well-being.
-                </p>
-              </div>
-              <div class="wrapper">
-                <img
-                  src="./public/img/image.jpg"
-                  class="hero-img"
-                  alt="body mass index"
-                />
-                <span class="decor decor-dots">+++</span>
-                <span class="decor decor-lines">///</span>
-              </div>
+          <h1 class="hero-title">Body Mass Index (BMI)</h1>
+
+          <div class="hero-section__content">
+            <div class="hero-text">
+              <p class="hero-text__paragraph">
+                <span class="accent">Body Mass Index (BMI)</span> is a simple
+                indicator that helps determine whether a person’s weight is
+                appropriate for their height. It is often used as a first step
+                in assessing overall body condition and potential health risks.
+              </p>
+
+              <p class="hero-text__paragraph">
+                Calculating BMI takes only a few seconds, but it can indicate
+                whether a person is underweight, within a normal range, or
+                overweight.
+              </p>
+
+              <p class="hero-text__paragraph hero-text__paragraph--last">
+                <span class="accent">An interesting fact</span> is that BMI was
+                developed in the 19th century and is still widely used today.
+                However, it does not take muscle mass or fat distribution into
+                account, so it is not a perfect measure. BMI is best viewed as a
+                starting point and should be considered alongside lifestyle,
+                physical activity, and overall well-being.
+              </p>
+            </div>
+
+            <div class="hero-media">
+              <img
+                src="/img/image.jpg"
+                class="hero-media__image"
+                alt="Body mass index"
+              />
+              <span class="hero-media__decor hero-media__decor--dots">+++</span>
+              <span class="hero-media__decor hero-media__decor--lines"
+                >///</span
+              >
             </div>
           </div>
-          <div class="table-container">
-            <table class="table">
+
+          <div class="bmi-table-wrapper">
+            <table class="bmi-table">
               <thead>
                 <tr>
                   <th>BMI</th>
@@ -70,83 +76,78 @@
                 </tr>
               </thead>
               <tbody>
-                <tr
-                  class="red-row"
-                  onclick="window.location.href = './page-under.html'"
-                >
+                <tr class="bmi-table__row bmi-table__row--under">
                   <td>&lt; 18.5</td>
-                  <td>Underweight</td>
+                  <td><a href="./page-under.html">Underweight</a></td>
                 </tr>
-                <tr
-                  class="green-row"
-                  onclick="window.location.href = './page-norm.html'"
-                >
+                <tr class="bmi-table__row bmi-table__row--normal">
                   <td>18.5 - 24.9</td>
-                  <td>Norm</td>
+                  <td><a href="./page-norm.html">Norm</a></td>
                 </tr>
-                <tr
-                  class="orange-row"
-                  onclick="window.location.href = './page-over.html'"
-                >
-                  <td>30 &gt;</td>
-                  <td>Obesity</td>
+                <tr class="bmi-table__row bmi-table__row--over">
+                  <td>&gt; 30</td>
+                  <td><a href="./page-over.html">Obesity</a></td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
       </section>
-      <section class="calculator">
-        <div class="container">
-          <h2 class="sub-title">Calculate your BMI</h2>
 
-          <div class="calculate-row">
-            <form class="form-calculator">
+      <section class="calculator-section">
+        <div class="container">
+          <h2 class="section-title">Calculate your BMI</h2>
+
+          <div class="calculator-layout">
+            <form class="calculator-form">
               <div class="form-field">
                 <label for="user-height" class="form-label">Height</label>
-                <div class="form-wrapper">
-                  <input
-                    type="tel"
-                    class="form-input"
-                    id="user-height"
-                    name="user-height"
-                    min="100"
-                    max="280"
-                    placeholder="Enter your height in cm"
-                  />
-                </div>
+                <input
+                  type="tel"
+                  class="form-input"
+                  id="user-height"
+                  name="user-height"
+                  min="100"
+                  max="280"
+                  placeholder="Enter your height in cm"
+                />
               </div>
 
               <div class="form-field">
                 <label for="user-weight" class="form-label">Weight</label>
-                <div class="form-wrapper">
-                  <input
-                    type="tel"
-                    class="form-input"
-                    id="user-weight"
-                    name="user-weight"
-                    min="10"
-                    max="200"
-                    placeholder="Enter your weight in kg"
-                  />
-                </div>
+                <input
+                  type="tel"
+                  class="form-input"
+                  id="user-weight"
+                  name="user-weight"
+                  min="10"
+                  max="200"
+                  placeholder="Enter your weight in kg"
+                />
               </div>
 
-              <button class="btn-calculator" type="submit">Calculation</button>
+              <button class="calculator-button" type="submit">
+                Calculation
+              </button>
             </form>
 
-            <div class="motivation-container">
-              <p class="motivation-text">Ready to check your result?</p>
-              <img src="./img/time.png" alt="time" class="time-img" />
+            <div class="calculator-note">
+              <p class="calculator-note__text">Ready to check your result?</p>
+              <img
+                src="/img/time.png"
+                alt="time"
+                class="calculator-note__image"
+              />
             </div>
           </div>
         </div>
       </section>
-      <div class="video-conteiner">
+
+      <section class="video-section">
         <div class="container">
-          <h2 class="sub-title">Did you know this?</h2>
+          <h2 class="section-title">Did you know this?</h2>
           <video
-            src="./public/img/video.mp4"
+            src="/img/video.mp4"
             class="promo-video"
             autoplay
             muted
@@ -155,24 +156,24 @@
             controls
           ></video>
         </div>
-      </div>
+      </section>
     </main>
 
-    <footer class="footer">
+    <footer class="site-footer">
       <div class="container">
-        <p class="footer-text">© 2026 Body Mass Index Calculator</p>
+        <p class="site-footer__text">© 2026 Body Mass Index Calculator</p>
       </div>
     </footer>
-    <!-- modal -->
+
     <div class="modal-overlay hidden">
       <div class="modal">
-        <button class="modal-close">×</button>
-
+        <button class="modal-close" type="button">×</button>
         <h3 class="modal-title">Your result</h3>
         <p class="modal-bmi"></p>
         <p class="modal-text"></p>
       </div>
     </div>
+
     <script type="module" src="/src/js/home.js"></script>
   </body>
 </html>
