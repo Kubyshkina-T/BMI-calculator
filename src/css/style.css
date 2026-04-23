@@ -588,7 +588,3 @@ a {
   letter-spacing: 0.5px;
   transition: color var(--transition-fast);
 }
-
-.site-footer__text:hover {
-  color: #00d4ff;
-}
